@@ -1,0 +1,18 @@
+import os
+from datetime import datetime
+
+def create_folder_ofdate(base_path):
+    current_date = datetime.now().strftime("%Y-%m-%d")
+    
+    new_folder_path = os.path.join(base_path, current_date)
+    
+    if not os.path.exists(new_folder_path):
+        
+        os.makedirs(new_folder_path)
+        print(f"Folder created: {new_folder_path}")
+    else:
+        print(f"Folder already exists: {new_folder_path}")
+        
+    return new_folder_path
+base_path ="/home/anode/KaynesTB"
+create_folder_ofdate(base_path)
